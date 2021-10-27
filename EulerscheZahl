@@ -1,0 +1,25 @@
+
+var eulerischeZahl: Double = 0
+
+for durchgang in 0...20 {
+
+    let fakultaetDesDurchgangs = fakultaet(von: durchgang)
+    
+    let ausdruck: Double = (1.0 / Double(fakultaetDesDurchgangs))
+    
+    eulerischeZahl += ausdruck
+}
+
+print("Eulersche Zahl: \(eulerischeZahl)")
+
+func fakultaet(von zahl: Int) -> Int {
+    
+    if zahl == 0 { return 1 } // 0! = 1 mathematische Definition
+    
+    var produkt = 1
+    
+    for multiplikator in 1...zahl {
+        produkt *= multiplikator
+    }
+    return produkt
+}
